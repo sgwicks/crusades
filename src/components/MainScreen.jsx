@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import Castle from './Castle';
 
 const MainScreen = () => {
   const [troops] = useState(1000);
@@ -11,7 +12,7 @@ const MainScreen = () => {
     <View style={styles.container}>
       <Text style={styles.troops}>{troops}</Text>
       <Text style={styles.wealth}>{wealth}</Text>
-      <Text style={styles.castle}>Castle</Text>
+      <Castle />
       <Text style={styles.unrest}>{unrest}</Text>
       <Text style={styles.loyalty}>{loyalty}</Text>
     </View>
@@ -24,7 +25,8 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     alignItems: 'center',
-    flexFlow: 'row wrap'
+    flexFlow: 'row wrap',
+    textAlign: 'center'
   },
   troops: {
     backgroundColor: '#B54B19',
@@ -45,11 +47,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#840032',
     color: '#e5dada',
     width: '50%'
-  },
-  castle: {
-    color: '#e5dada',
-    width: '100%',
-    textAlign: 'center'
   }
 });
 
