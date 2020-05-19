@@ -4,19 +4,23 @@ import Castle from './Castle';
 
 const MainScreen = () => {
   const [troops] = useState(1000);
-  const [wealth] = useState(100);
+  const [wealth, setWealth] = useState(100);
   const [unrest] = useState(50);
   const [loyalty] = useState(75);
   const [turn, setTurn] = useState(0);
+  const [wealthPerTurn] = useState(5);
 
   const handleTurn = () => {
     setTurn(turn + 1);
+    setWealth(wealth + wealthPerTurn);
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.troops}>{troops}</Text>
-      <Text style={styles.wealth}>{wealth}</Text>
+      <Text style={styles.wealth}>
+        {wealth} (+{wealthPerTurn})
+      </Text>
       <Castle turn={turn} handleTurn={handleTurn} />
       <Text style={styles.unrest}>{unrest}</Text>
       <Text style={styles.loyalty}>{loyalty}</Text>
