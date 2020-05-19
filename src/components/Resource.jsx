@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Resource = ({ resource, perTurn, backgroundColor }) => {
+const Resource = ({ resource, perTurn, resourceStyles }) => {
+  const { color, backgroundColor } = resourceStyles;
   return (
     <View style={styles.container}>
       <View style={[styles.resource, { backgroundColor }]}>
-        <Text style={styles.resourceText}>
+        <Text style={[styles.resourceText, { color }]}>
           {resource} {perTurn && `(+${perTurn})`}
         </Text>
       </View>
@@ -30,8 +31,7 @@ const styles = StyleSheet.create({
     top: '45%',
     left: 0,
     bottom: 0,
-    right: 0,
-    color: '#02040F'
+    right: 0
   }
 });
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Castle from './Castle';
 import Resource from './Resource';
 
@@ -18,15 +18,24 @@ const MainScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Resource resource={troops} backgroundColor={'#B54B19'} />
+      <Resource
+        resource={troops}
+        resourceStyles={{ backgroundColor: '#B54B19', color: '#e5dada' }}
+      />
       <Resource
         resource={wealth}
         perTurn={wealthPerTurn}
-        backgroundColor={'#E59500'}
+        resourceStyles={{ backgroundColor: '#E59500' }}
       />
       <Castle turn={turn} handleTurn={handleTurn} />
-      <Text style={styles.unrest}>{unrest}</Text>
-      <Text style={styles.loyalty}>{loyalty}</Text>
+      <Resource
+        resource={unrest}
+        resourceStyles={{ backgroundColor: '#02040F', color: '#e5dada' }}
+      />
+      <Resource
+        resource={loyalty}
+        resourceStyles={{ backgroundColor: '#840032', color: '#e5dada' }}
+      />
     </View>
   );
 };
@@ -39,16 +48,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexFlow: 'row wrap',
     textAlign: 'center'
-  },
-  unrest: {
-    backgroundColor: '#02040F',
-    color: '#e5dada',
-    width: '50%'
-  },
-  loyalty: {
-    backgroundColor: '#840032',
-    color: '#e5dada',
-    width: '50%'
   }
 });
 
