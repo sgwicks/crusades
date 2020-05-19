@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Wealth = ({ wealth, wealthPerTurn }) => {
+const Resource = ({ wealth, wealthPerTurn }) => {
   return (
     <View style={styles.container}>
       <View style={styles.wealth}>
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Wealth;
+export default Resource;
