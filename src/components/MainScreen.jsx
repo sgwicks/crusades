@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Castle from './Castle';
 
 const MainScreen = () => {
@@ -17,8 +17,7 @@ const MainScreen = () => {
     <View style={styles.container}>
       <Text style={styles.troops}>{troops}</Text>
       <Text style={styles.wealth}>{wealth}</Text>
-      <Castle turn={turn} />
-      <TouchableOpacity onPress={handleTurn}>Next Turn</TouchableOpacity>
+      <Castle turn={turn} handleTurn={handleTurn} />
       <Text style={styles.unrest}>{unrest}</Text>
       <Text style={styles.loyalty}>{loyalty}</Text>
     </View>
