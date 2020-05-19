@@ -7,8 +7,8 @@ const Castle = ({ turn, handleTurn }) => {
       <Text style={{ color: '#e5dada' }}>Castleton</Text>
       <Text style={{ color: '#e5dada' }}>Turn {turn}/50</Text>
       <Text style={{ color: '#e5dada' }}>CASTLE_IMG.jpg</Text>
-      <TouchableOpacity onPress={handleTurn} style={{ color: '#e5dada' }}>
-        Next Turn
+      <TouchableOpacity onPress={handleTurn}>
+        <Text style={{ color: '#e5dada' }}>Next Turn</Text>
       </TouchableOpacity>
     </View>
   );

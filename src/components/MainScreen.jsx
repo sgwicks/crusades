@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
+import { Router } from '@reach/router';
 import Castle from './Castle';
 import Resource from './Resource';
+import Event from './Event';
+import EventFooter from './EventFooter';
 
 const MainScreen = () => {
   const [troops] = useState(1000);
@@ -27,7 +30,10 @@ const MainScreen = () => {
         perTurn={wealthPerTurn}
         resourceStyles={{ backgroundColor: '#E59500' }}
       />
-      <Castle turn={turn} handleTurn={handleTurn} />
+      <Router style={{ width: '100%', height: 250 }}>
+        <Castle turn={turn} handleTurn={handleTurn} path='/' />
+        <Event path='/event' />
+      </Router>
       <Resource
         resource={unrest}
         resourceStyles={{ backgroundColor: '#02040F', color: '#e5dada' }}
@@ -36,6 +42,7 @@ const MainScreen = () => {
         resource={loyalty}
         resourceStyles={{ backgroundColor: '#840032', color: '#e5dada' }}
       />
+      <EventFooter />
     </View>
   );
 };
