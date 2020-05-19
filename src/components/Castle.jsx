@@ -1,13 +1,18 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-const Castle = () => {
-  return <Text style={styles.castle}>Castle</Text>;
+const Castle = ({ turn }) => {
+  return (
+    <View style={styles.castle}>
+      <Text style={{ color: '#e5dada' }}>Castleton</Text>
+      <Text style={{ color: '#e5dada' }}>Turn {turn}/50</Text>
+      <Text style={{ color: '#e5dada' }}>CASTLE_IMG.jpg</Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
   castle: {
-    color: '#e5dada',
     width: '100%'
   }
 });
