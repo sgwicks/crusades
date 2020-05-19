@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Resource = ({ wealth, wealthPerTurn }) => {
+const Resource = ({ resource, perTurn, backgroundColor }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.wealth}>
-        <Text style={styles.wealthText}>
-          {wealth} (+{wealthPerTurn})
+      <View style={[styles.resource, { backgroundColor }]}>
+        <Text style={styles.resourceText}>
+          {resource} {perTurn && `(+${perTurn})`}
         </Text>
       </View>
     </View>
@@ -18,15 +18,14 @@ const styles = StyleSheet.create({
     width: '50%',
     alignItems: 'center'
   },
-  wealth: {
+  resource: {
     width: '50%',
     paddingTop: '50%',
-    backgroundColor: '#E59500',
     borderRadius: '50%',
     justifyContent: 'center',
     position: 'relative'
   },
-  wealthText: {
+  resourceText: {
     position: 'absolute',
     top: '45%',
     left: 0,

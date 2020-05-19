@@ -18,8 +18,12 @@ const MainScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.troops}>{troops}</Text>
-      <Resource wealth={wealth} wealthPerTurn={wealthPerTurn} />
+      <Resource resource={troops} backgroundColor={'#B54B19'} />
+      <Resource
+        resource={wealth}
+        perTurn={wealthPerTurn}
+        backgroundColor={'#E59500'}
+      />
       <Castle turn={turn} handleTurn={handleTurn} />
       <Text style={styles.unrest}>{unrest}</Text>
       <Text style={styles.loyalty}>{loyalty}</Text>
@@ -35,11 +39,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexFlow: 'row wrap',
     textAlign: 'center'
-  },
-  troops: {
-    backgroundColor: '#B54B19',
-    color: '#e5dada',
-    width: '50%'
   },
   unrest: {
     backgroundColor: '#02040F',
