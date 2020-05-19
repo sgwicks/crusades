@@ -1,8 +1,10 @@
 import React from 'react';
+
 import './App.css';
+import MainScreen from './components/MainScreen';
 
 function App() {
-  return <h1>Crusades</h1>;
+  return <MainScreen />;
 }
 
 export default App;
