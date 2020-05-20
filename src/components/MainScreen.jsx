@@ -52,9 +52,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#002642',
     height: '100%',
     width: '100%',
+    maxWidth: '100vh',
     alignItems: 'center',
     flexFlow: 'row wrap',
-    textAlign: 'center'
+    textAlign: 'center',
+    alignSelf: 'center'
   }
 });
 
