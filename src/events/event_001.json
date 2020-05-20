@@ -1,0 +1,7 @@
+{
+  "name": "Pass Go",
+  "event_text": "You pass Go. Collect £200",
+  "effects": {
+    "wealth": 200
+  }
+}

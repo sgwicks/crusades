@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   background: {
-    height: 370,
-    width: 370,
+    height: 320,
+    width: 320,
     alignItems: 'center',
     justifyContent: 'center'
   }

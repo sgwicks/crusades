@@ -5,6 +5,7 @@ import Castle from './Castle';
 import Resource from './Resource';
 import Event from './Event';
 import EventFooter from './EventFooter';
+import event_001 from '../events/event_001.json';
 
 const Modal = ({ children }) => {
   return ReactDOM.createPortal(children, document.getElementById('modal'));
@@ -18,6 +19,7 @@ const MainScreen = () => {
   const [turn, setTurn] = useState(0);
   const [wealthPerTurn] = useState(5);
   const [modal, setModal] = useState(false);
+  const [event, setEvent] = useState(event_001);
 
   const handleTurn = () => {
     setTurn(turn + 1);
@@ -25,9 +27,12 @@ const MainScreen = () => {
   };
 
   const toggleModal = () => {
+    if (modal) {
+      if (event.effects.wealth) setWealth(wealth + event.effects.wealth);
+      setEvent({ ...event, effects: {} });
+    }
     setModal(!modal);
   };
-
   return (
     <View style={styles.container}>
       <Resource
@@ -42,7 +47,7 @@ const MainScreen = () => {
       <Castle turn={turn} handleTurn={handleTurn} path='/' />
       {modal && (
         <Modal>
-          <Event toggleModal={toggleModal} />
+          <Event toggleModal={toggleModal} event={event} />
         </Modal>
       )}
       <Resource

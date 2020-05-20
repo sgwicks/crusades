@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const Event = ({ toggleModal }) => {
+const Event = ({ toggleModal, event }) => {
+  const { name, event_text, effects } = event;
   return (
     <View style={styles.eventModal}>
-      <Text style={{ color: '#e5dada' }}>Event Text</Text>
+      <Text style={{ color: '#e5dada' }}>{name}</Text>
+      <Text style={{ color: '#e5dada' }}>{event_text}</Text>
       <TouchableOpacity onPress={toggleModal}>
         <Text style={{ color: '#e5dada' }}>Back to Castle</Text>
       </TouchableOpacity>
