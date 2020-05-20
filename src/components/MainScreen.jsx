@@ -21,9 +21,15 @@ const MainScreen = () => {
   const [modal, setModal] = useState(false);
   const [event, setEvent] = useState(events.e_002);
 
+  const { events_list } = events;
+
   const handleTurn = () => {
+    const nextEvent =
+      events_list[Math.floor(Math.random() * events_list.length)];
+
     setTurn(turn + 1);
     setWealth(wealth + wealthPerTurn);
+    setEvent(events[nextEvent]);
   };
 
   const toggleModal = (effects) => {
@@ -38,6 +44,7 @@ const MainScreen = () => {
     }
     setModal(!modal);
   };
+
   return (
     <View style={styles.container}>
       <Resource
