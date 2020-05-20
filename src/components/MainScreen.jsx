@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import { View, StyleSheet } from 'react-native';
-import { Router } from '@reach/router';
 import Castle from './Castle';
 import Resource from './Resource';
 import Event from './Event';
 import EventFooter from './EventFooter';
+
+const Modal = ({ children }) => {
+  return ReactDOM.createPortal(children, document.getElementById('modal'));
+};
 
 const MainScreen = () => {
   const [troops] = useState(1000);
@@ -13,10 +17,15 @@ const MainScreen = () => {
   const [loyalty] = useState(75);
   const [turn, setTurn] = useState(0);
   const [wealthPerTurn] = useState(5);
+  const [modal, setModal] = useState(false);
 
   const handleTurn = () => {
     setTurn(turn + 1);
     setWealth(wealth + wealthPerTurn);
+  };
+
+  const toggleModal = () => {
+    setModal(!modal);
   };
 
   return (
@@ -30,11 +39,12 @@ const MainScreen = () => {
         perTurn={wealthPerTurn}
         resourceStyles={{ backgroundColor: '#E59500' }}
       />
-      <Router style={{ width: '100%', alignSelf: 'stretch' }}>
-        <Castle turn={turn} handleTurn={handleTurn} path='/' />
-        <Event path='/event' />
-      </Router>
-
+      <Castle turn={turn} handleTurn={handleTurn} path='/' />
+      {modal && (
+        <Modal>
+          <Event toggleModal={toggleModal} />
+        </Modal>
+      )}
       <Resource
         resource={unrest}
         resourceStyles={{ backgroundColor: '#02040F', color: '#e5dada' }}
@@ -43,7 +53,7 @@ const MainScreen = () => {
         resource={loyalty}
         resourceStyles={{ backgroundColor: '#840032', color: '#e5dada' }}
       />
-      <EventFooter />
+      <EventFooter toggleModal={toggleModal} />
     </View>
   );
 };

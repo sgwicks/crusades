@@ -1,16 +1,29 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { Link } from '@reach/router';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const Event = () => {
+const Event = ({ toggleModal }) => {
   return (
-    <View>
+    <View style={styles.eventModal}>
       <Text style={{ color: '#e5dada' }}>Event Text</Text>
-      <Link to='/' style={{ color: '#e5dada' }}>
-        Back to Castle
-      </Link>
+      <TouchableOpacity onPress={toggleModal}>
+        <Text style={{ color: '#e5dada' }}>Back to Castle</Text>
+      </TouchableOpacity>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  eventModal: {
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    position: 'fixed',
+    height: '100%',
+    width: '100%',
+    top: 0,
+    left: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+});
 
 export default Event;

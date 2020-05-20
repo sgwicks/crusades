@@ -1,15 +1,13 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Link } from '@reach/router';
+import { TouchableOpacity, Text } from 'react-native';
 
-const EventFooter = () => {
+const EventFooter = ({ toggleModal }) => {
   return (
-    <View
+    <TouchableOpacity
+      onPress={toggleModal}
       style={{ alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-      <Link to='/event' style={{ color: 'white' }}>
-        A new event!
-      </Link>
-    </View>
+      <Text style={{ color: '#e5dada' }}>A new event!</Text>
+    </TouchableOpacity>
   );
 };
 

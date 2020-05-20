@@ -25,7 +25,6 @@ const Castle = ({ turn, handleTurn }) => {
 const styles = StyleSheet.create({
   castle: {
     width: '100%',
-    height: '100%',
     alignItems: 'center'
   },
   background: {
