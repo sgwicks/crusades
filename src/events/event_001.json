@@ -1,5 +1,6 @@
 {
-  "name": "Pass Go",
+  "event_id": "001",
+  "event_name": "Pass Go",
   "event_text": "You pass Go. Collect £200",
   "effects": {
     "wealth": 200

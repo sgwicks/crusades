@@ -47,7 +47,7 @@ const MainScreen = () => {
       <Castle turn={turn} handleTurn={handleTurn} path='/' />
       {modal && (
         <Modal>
-          <Event toggleModal={toggleModal} event={event} />
+          <Event toggleModal={toggleModal} {...event} />
         </Modal>
       )}
       <Resource
@@ -58,7 +58,7 @@ const MainScreen = () => {
         resource={loyalty}
         resourceStyles={{ backgroundColor: '#840032', color: '#e5dada' }}
       />
-      <EventFooter toggleModal={toggleModal} />
+      <EventFooter toggleModal={toggleModal} {...event} />
     </View>
   );
 };
