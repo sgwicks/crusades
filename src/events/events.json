@@ -1,5 +1,5 @@
 {
-  "events_list": ["e_001", "e_002"],
+  "events_list": ["e_001", "e_002", "e_003"],
   "e_001": {
     "event_id": "001",
     "event_name": "Pass Go",
@@ -28,6 +28,19 @@
         "choice_name": "I want soliders!",
         "effects": {
           "addTroops": 1000
+        }
+      }
+    ]
+  },
+  "e_003": {
+    "event_id": "003",
+    "event_name": "The Peasants are Upset",
+    "event_text": "The angry peasants are going to revolt",
+    "choices": [
+      {
+        "choice_name": "Sure, sure, let them complain",
+        "effects": {
+          "addUnrest": 10
         }
       }
     ]

@@ -5,7 +5,7 @@ import Castle from './Castle';
 import Resource from './Resource';
 import Event from './Event';
 import EventFooter from './EventFooter';
-import events from '../events/event_001.json';
+import events from '../events/events.json';
 
 const Modal = ({ children }) => {
   return ReactDOM.createPortal(children, document.getElementById('modal'));
@@ -14,7 +14,7 @@ const Modal = ({ children }) => {
 const MainScreen = () => {
   const [troops, setTroops] = useState(1000);
   const [wealth, setWealth] = useState(100);
-  const [unrest] = useState(50);
+  const [unrest, setUnrest] = useState(50);
   const [loyalty] = useState(75);
   const [turn, setTurn] = useState(0);
   const [wealthPerTurn] = useState(5);
@@ -33,10 +33,11 @@ const MainScreen = () => {
   };
 
   const toggleModal = (effects) => {
-    const { addWealth, addTroops } = effects;
+    const { addWealth, addTroops, addUnrest } = effects;
     if (modal) {
       if (addWealth) setWealth(wealth + addWealth);
       if (addTroops) setTroops(troops + addTroops);
+      if (addUnrest) setUnrest(unrest + addUnrest);
       setEvent({
         ...event,
         choices: [{ choice_name: 'Back to Castle', effects: {} }]
