@@ -30,10 +30,11 @@ const MainScreen = () => {
         perTurn={wealthPerTurn}
         resourceStyles={{ backgroundColor: '#E59500' }}
       />
-      <Router style={{ width: '100%', height: 250 }}>
+      <Router style={{ width: '100%', alignSelf: 'stretch' }}>
         <Castle turn={turn} handleTurn={handleTurn} path='/' />
         <Event path='/event' />
       </Router>
+
       <Resource
         resource={unrest}
         resourceStyles={{ backgroundColor: '#02040F', color: '#e5dada' }}
@@ -53,10 +54,11 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     maxWidth: '100vh',
-    alignItems: 'center',
-    flexFlow: 'row wrap',
     textAlign: 'center',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    justifyContent: 'stretch',
+    alignItems: 'center',
+    flexFlow: 'row wrap'
   }
 });
 

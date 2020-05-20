@@ -18,6 +18,11 @@ body {
   justify-content: center;
 }
 
+#modal {
+  position: relative;
+  z-index: 999;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
