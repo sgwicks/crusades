@@ -1,14 +1,24 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const Event = ({ toggleModal, event_text, event_name }) => {
+const Event = ({ toggleModal, event_text, event_name, choices }) => {
+  const handleChoice = (effects) => {
+    toggleModal(effects);
+  };
+
   return (
     <View style={styles.eventModal}>
       <Text style={{ color: '#e5dada' }}>{event_name}</Text>
       <Text style={{ color: '#e5dada' }}>{event_text}</Text>
-      <TouchableOpacity onPress={toggleModal}>
-        <Text style={{ color: '#e5dada' }}>Back to Castle</Text>
-      </TouchableOpacity>
+      {choices.map((choice, i) => {
+        return (
+          <TouchableOpacity
+            key={'choice' + i}
+            onPress={() => handleChoice(choice.effects)}>
+            <Text style={{ color: '#e5dada' }}>{choice.choice_name}</Text>
+          </TouchableOpacity>
+        );
+      })}
     </View>
   );
 };

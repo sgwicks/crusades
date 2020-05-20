@@ -1,8 +1,34 @@
 {
-  "event_id": "001",
-  "event_name": "Pass Go",
-  "event_text": "You pass Go. Collect £200",
-  "effects": {
-    "wealth": 200
+  "e_001": {
+    "event_id": "001",
+    "event_name": "Pass Go",
+    "event_text": "You pass Go. Collect £200",
+    "choices": [
+      {
+        "choice_name": "Collect £200",
+        "effects": {
+          "addWealth": 200
+        }
+      }
+    ]
+  },
+  "e_002": {
+    "event_id": "002",
+    "event_name": "Money or Soldiers",
+    "event_text": "Would you like more money, or more soldiers?",
+    "choices": [
+      {
+        "choice_name": "Give me money!",
+        "effects": {
+          "addWealth": 200
+        }
+      },
+      {
+        "choice_name": "I want soliders!",
+        "effects": {
+          "addTroops": 1000
+        }
+      }
+    ]
   }
 }

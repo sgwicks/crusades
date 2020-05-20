@@ -5,31 +5,36 @@ import Castle from './Castle';
 import Resource from './Resource';
 import Event from './Event';
 import EventFooter from './EventFooter';
-import event_001 from '../events/event_001.json';
+import events from '../events/event_001.json';
 
 const Modal = ({ children }) => {
   return ReactDOM.createPortal(children, document.getElementById('modal'));
 };
 
 const MainScreen = () => {
-  const [troops] = useState(1000);
+  const [troops, setTroops] = useState(1000);
   const [wealth, setWealth] = useState(100);
   const [unrest] = useState(50);
   const [loyalty] = useState(75);
   const [turn, setTurn] = useState(0);
   const [wealthPerTurn] = useState(5);
   const [modal, setModal] = useState(false);
-  const [event, setEvent] = useState(event_001);
+  const [event, setEvent] = useState(events.e_002);
 
   const handleTurn = () => {
     setTurn(turn + 1);
     setWealth(wealth + wealthPerTurn);
   };
 
-  const toggleModal = () => {
+  const toggleModal = (effects) => {
+    const { addWealth, addTroops } = effects;
     if (modal) {
-      if (event.effects.wealth) setWealth(wealth + event.effects.wealth);
-      setEvent({ ...event, effects: {} });
+      if (addWealth) setWealth(wealth + addWealth);
+      if (addTroops) setTroops(troops + addTroops);
+      setEvent({
+        ...event,
+        choices: [{ choice_name: 'Back to Castle', effects: {} }]
+      });
     }
     setModal(!modal);
   };
