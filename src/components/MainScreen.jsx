@@ -15,7 +15,7 @@ const MainScreen = () => {
   const [troops, setTroops] = useState(1000);
   const [wealth, setWealth] = useState(100);
   const [unrest, setUnrest] = useState(50);
-  const [loyalty] = useState(75);
+  const [loyalty, setLoyalty] = useState(75);
   const [turn, setTurn] = useState(0);
   const [wealthPerTurn] = useState(5);
   const [modal, setModal] = useState(false);
@@ -33,11 +33,12 @@ const MainScreen = () => {
   };
 
   const toggleModal = (effects) => {
-    const { addWealth, addTroops, addUnrest } = effects;
+    const { addWealth, addTroops, addUnrest, addLoyalty } = effects;
     if (modal) {
       if (addWealth) setWealth(wealth + addWealth);
       if (addTroops) setTroops(troops + addTroops);
       if (addUnrest) setUnrest(unrest + addUnrest);
+      if (addLoyalty) setLoyalty(loyalty + addLoyalty);
       setEvent({
         ...event,
         choices: [{ choice_name: 'Back to Castle', effects: {} }]

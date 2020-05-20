@@ -1,5 +1,5 @@
 {
-  "events_list": ["e_001", "e_002", "e_003"],
+  "events_list": ["e_001", "e_002", "e_003", "e_004"],
   "e_001": {
     "event_id": "001",
     "event_name": "Pass Go",
@@ -41,6 +41,19 @@
         "choice_name": "Sure, sure, let them complain",
         "effects": {
           "addUnrest": 10
+        }
+      }
+    ]
+  },
+  "e_004": {
+    "event_id": "004",
+    "event_name": "The Nobles are Upset",
+    "event_text": "The angry Nobles are going to rebel",
+    "choices": [
+      {
+        "choice_name": "Don't they love me?",
+        "effects": {
+          "addLoyalty": -10
         }
       }
     ]
