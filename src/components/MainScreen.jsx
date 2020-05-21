@@ -26,7 +26,6 @@ const MainScreen = () => {
   const handleTurn = () => {
     const nextEvent =
       events_list[Math.floor(Math.random() * events_list.length)];
-
     setTurn(turn + 1);
     setWealth(wealth + wealthPerTurn);
     setEvent(events[nextEvent]);

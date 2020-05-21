@@ -15,6 +15,9 @@
   },
   "e_002": {
     "event_id": "002",
+    "conditions": {
+      "minWealth": 50
+    },
     "event_name": "Money or Soldiers",
     "event_text": "Would you like more money, or more soldiers?",
     "choices": [
