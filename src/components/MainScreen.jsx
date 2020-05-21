@@ -6,6 +6,7 @@ import Resource from './Resource';
 import Event from './Event';
 import EventFooter from './EventFooter';
 import events from '../events/events.json';
+import { evaluateConditions } from '../utils/utils';
 
 const Modal = ({ children }) => {
   return ReactDOM.createPortal(children, document.getElementById('modal'));
@@ -13,7 +14,7 @@ const Modal = ({ children }) => {
 
 const MainScreen = () => {
   const [troops, setTroops] = useState(1000);
-  const [wealth, setWealth] = useState(100);
+  const [wealth, setWealth] = useState(25);
   const [unrest, setUnrest] = useState(50);
   const [loyalty, setLoyalty] = useState(75);
   const [turn, setTurn] = useState(0);
@@ -24,8 +25,17 @@ const MainScreen = () => {
   const { events_list } = events;
 
   const handleTurn = () => {
+    // Checks all event conditions against current resources
+    const filterEvents = events_list.filter((event_id) => {
+      const { conditions } = events[event_id];
+      const values = { troops, wealth, unrest, loyalty };
+      return evaluateConditions(conditions, values);
+    });
+
+    // Chooses a random event from the filtered down list
     const nextEvent =
-      events_list[Math.floor(Math.random() * events_list.length)];
+      filterEvents[Math.floor(Math.random() * filterEvents.length)];
+
     setTurn(turn + 1);
     setWealth(wealth + wealthPerTurn);
     setEvent(events[nextEvent]);
