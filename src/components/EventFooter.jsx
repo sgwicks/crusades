@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '90%',
     marginHorizontal: '5%',
-    padding: '30px',
+    paddingBottom: '40px',
+    paddingTop: '10px',
     borderTopLeftRadius: '30px',
     borderTopRightRadius: '30px',
     borderColor: 'rgba(229, 184, 110, 1)',
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)'
   },
   eventText: { color: '#e5dada' },
-  eventTitle: { color: '#e5dada' }
+  eventTitle: { color: '#e5dada', paddingBottom: 5, fontSize: 24 }
 });
 
 export default EventFooter;

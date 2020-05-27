@@ -16,12 +16,14 @@ const Resource = ({ resource, perTurn, resourceStyles }) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '50%',
+    minWidth: 1,
+    maxWidth: '25%',
+    flex: 1,
     alignItems: 'center'
   },
   resource: {
-    width: '50%',
-    paddingTop: '50%',
+    width: '100%',
+    paddingTop: '100%',
     borderRadius: '50%',
     justifyContent: 'center',
     position: 'relative'

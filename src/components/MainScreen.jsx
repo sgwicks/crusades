@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import Castle from './Castle';
 import Resource from './Resource';
 import Event from './Event';
@@ -58,29 +58,35 @@ const MainScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Resource
-        resource={troops}
-        resourceStyles={{ backgroundColor: '#B54B19', color: '#e5dada' }}
-      />
-      <Resource
-        resource={wealth}
-        perTurn={wealthPerTurn}
-        resourceStyles={{ backgroundColor: '#E59500' }}
-      />
-      <Castle turn={turn} handleTurn={handleTurn} path='/' />
+      <View style={styles.resources}>
+        <Resource
+          resource={troops}
+          resourceStyles={{ backgroundColor: '#B54B19', color: '#e5dada' }}
+        />
+        <Text style={styles.banner}>Castleton</Text>
+        <Resource
+          resource={wealth}
+          perTurn={wealthPerTurn}
+          resourceStyles={{ backgroundColor: '#E59500' }}
+        />
+      </View>
+      <Castle turn={turn} handleTurn={handleTurn} />
       {modal && (
         <Modal>
           <Event toggleModal={toggleModal} {...event} />
         </Modal>
       )}
-      <Resource
-        resource={unrest}
-        resourceStyles={{ backgroundColor: '#02040F', color: '#e5dada' }}
-      />
-      <Resource
-        resource={loyalty}
-        resourceStyles={{ backgroundColor: '#840032', color: '#e5dada' }}
-      />
+      <View style={styles.resources}>
+        <Resource
+          resource={unrest}
+          resourceStyles={{ backgroundColor: '#02040F', color: '#e5dada' }}
+        />
+        <Text style={styles.banner}>Next Turn</Text>
+        <Resource
+          resource={loyalty}
+          resourceStyles={{ backgroundColor: '#840032', color: '#e5dada' }}
+        />
+      </View>
       <EventFooter toggleModal={toggleModal} {...event} />
     </View>
   );
@@ -94,7 +100,20 @@ const styles = StyleSheet.create({
     maxWidth: '100vh',
     textAlign: 'center',
     alignSelf: 'center',
-    justifyContent: 'stretch',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    flexFlow: 'row wrap'
+  },
+  banner: {
+    color: '#e5dada',
+    flex: 2,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    padding: 10
+  },
+  resources: {
+    width: '90%',
+    marginHorizontal: '10%',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     flexFlow: 'row wrap'
   }
