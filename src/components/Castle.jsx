@@ -1,22 +1,12 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ImageBackground
-} from 'react-native';
+import { View, Text, StyleSheet, ImageBackground } from 'react-native';
 import castleImage from '../images/Castle.png';
 
-const Castle = ({ turn, handleTurn }) => {
+const Castle = ({ turn }) => {
   return (
     <View style={styles.castle}>
       <ImageBackground source={castleImage} style={styles.background}>
-        <Text style={{ color: '#e5dada' }}>Castleton</Text>
         <Text style={{ color: '#e5dada' }}>Turn {turn}/50</Text>
-        <TouchableOpacity onPress={handleTurn}>
-          <Text style={{ color: '#e5dada' }}>Next Turn</Text>
-        </TouchableOpacity>
       </ImageBackground>
     </View>
   );
@@ -24,14 +14,17 @@ const Castle = ({ turn, handleTurn }) => {
 
 const styles = StyleSheet.create({
   castle: {
-    width: '100%',
-    alignItems: 'center'
+    alignItems: 'center',
+    position: 'relative',
+    zIndex: -100
   },
   background: {
     height: 320,
     width: 320,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    position: 'absolute',
+    top: -160
   }
 });
 

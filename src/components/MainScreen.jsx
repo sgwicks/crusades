@@ -82,7 +82,7 @@ const MainScreen = () => {
           resourceStyles={{ backgroundColor: '#02040F', color: '#e5dada' }}
         />
         <TouchableOpacity style={styles.banner} onPress={handleTurn}>
-          Next Turn
+          <Text style={{ color: '#e5dada' }}>Next Turn</Text>
         </TouchableOpacity>
         <Resource
           resource={loyalty}
