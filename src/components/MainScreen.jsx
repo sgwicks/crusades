@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import Castle from './Castle';
 import Resource from './Resource';
 import Event from './Event';
@@ -81,7 +81,9 @@ const MainScreen = () => {
           resource={unrest}
           resourceStyles={{ backgroundColor: '#02040F', color: '#e5dada' }}
         />
-        <Text style={styles.banner}>Next Turn</Text>
+        <TouchableOpacity style={styles.banner} onPress={handleTurn}>
+          Next Turn
+        </TouchableOpacity>
         <Resource
           resource={loyalty}
           resourceStyles={{ backgroundColor: '#840032', color: '#e5dada' }}
