@@ -79,7 +79,10 @@ const MainScreen = () => {
       <View style={styles.resources}>
         <Resource
           resource={unrest}
-          resourceStyles={{ backgroundColor: '#02040F', color: '#e5dada' }}
+          resourceStyles={{
+            backgroundColor: '#02040F',
+            color: '#e5dada'
+          }}
         />
         <TouchableOpacity style={styles.banner} onPress={handleTurn}>
           <Text style={{ color: '#e5dada' }}>Next Turn</Text>
@@ -109,8 +112,13 @@ const styles = StyleSheet.create({
   banner: {
     color: '#e5dada',
     flex: 2,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    padding: 10
+    backgroundColor: 'rgba(1, 11, 28, 1)',
+    padding: 10,
+    borderColor: 'rgba(229, 184, 110, 1)',
+    borderTopWidth: 5,
+    borderStyle: 'ridge',
+    borderBottomWidth: 5,
+    zIndex: -1
   },
   resources: {
     width: '90%',

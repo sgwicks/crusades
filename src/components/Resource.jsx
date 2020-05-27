@@ -5,7 +5,14 @@ const Resource = ({ resource, perTurn, resourceStyles }) => {
   const { color, backgroundColor } = resourceStyles;
   return (
     <View style={styles.container}>
-      <View style={[styles.resource, { backgroundColor }]}>
+      <View
+        style={[
+          styles.resource,
+          {
+            boxShadow: `0px 0px 0px 7px ${backgroundColor}`
+          },
+          { backgroundColor }
+        ]}>
         <Text style={[styles.resourceText, { color }]}>
           {resource} {perTurn && `(+${perTurn})`}
         </Text>
