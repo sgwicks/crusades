@@ -63,7 +63,9 @@ const MainScreen = () => {
           resource={troops}
           resourceStyles={{ backgroundColor: '#B54B19', color: '#e5dada' }}
         />
-        <Text style={styles.banner}>Castleton</Text>
+        <Text style={styles.banner}>
+          {modal ? event.event_name : 'Castleton'}
+        </Text>
         <Resource
           resource={wealth}
           perTurn={wealthPerTurn}

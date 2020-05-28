@@ -16,15 +16,16 @@ const styles = StyleSheet.create({
   castle: {
     alignItems: 'center',
     position: 'relative',
+    height: '30vh',
     zIndex: -100
   },
   background: {
-    height: 320,
-    width: 320,
+    height: '50vh',
+    width: '50vh',
     alignItems: 'center',
     justifyContent: 'center',
     position: 'absolute',
-    top: -160
+    top: '-10vh'
   }
 });
 
