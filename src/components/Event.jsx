@@ -13,13 +13,15 @@ const Event = ({ toggleModal, event_text, choices }) => {
   }, [event_text, choices]);
 
   const handleChoice = (choice) => {
-    setText(choice.choice_text);
+    const { choice_text } = choice;
+    const choiceText = choice_text ? choice_text : event_text;
+    setText(choiceText);
     setButtons([{ ...choice, choice_name: 'Ok' }]);
     toggleHasChosen(true);
   };
 
-  const exitEvent = (choice) => {
-    toggleModal(choice);
+  const exitEvent = (choice, text) => {
+    toggleModal(choice, text);
   };
 
   return (
@@ -33,7 +35,7 @@ const Event = ({ toggleModal, event_text, choices }) => {
             <TouchableOpacity
               key={'choice' + i}
               onPress={() =>
-                hasChosen ? exitEvent(choice) : handleChoice(choice)
+                hasChosen ? exitEvent(choice, text) : handleChoice(choice)
               }
               style={styles.eventChoiceButton}>
               <Text style={styles.eventChoiceText}>{choice.choice_name}</Text>
