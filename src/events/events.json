@@ -71,14 +71,14 @@
       {
         "choice_name": "Ah, yes. Thank you for reminding me",
         "effects": {
-          "wealth": -300,
-          "loyalty": 25
+          "addWealth": -300,
+          "addLoyalty": 25
         }
       },
       {
         "choice_name": "Rewards? What for?",
         "effects": {
-          "loyalty": -25
+          "addLoyalty": -25
         }
       }
     ]
@@ -94,7 +94,7 @@
       {
         "choice_name": "Good work!",
         "effects": {
-          "wealth": 100
+          "addWealth": 100
         }
       }
     ]
@@ -109,21 +109,21 @@
         "choice_name": "Me too, but we must keep it a secret",
         "effects": {
           "flag": "secret_lover",
-          "loyalty": 20
+          "addLoyalty": 20
         }
       },
       {
         "choice_name": "Finally, we can tell the world! Let's get married tomorrow!",
         "effects": {
-          "loyalty": -50,
-          "unrest": -50,
-          "wealth": -50
+          "addLoyalty": -50,
+          "addUnrest": -50,
+          "addWealth": -50
         }
       },
       {
         "choice_name": "What? I never!",
         "effects": {
-          "loyalty": -10
+          "addLoyalty": -10
         }
       }
     ]
@@ -137,7 +137,7 @@
       {
         "choice_name": "Excellent!",
         "effects": {
-          "troops": 500
+          "addTroops": 500
         }
       }
     ]
@@ -151,22 +151,22 @@
       {
         "choice_name": "I can pay a small amount",
         "effects": {
-          "troops": 200,
-          "wealth": -50
+          "addTroops": 200,
+          "addWealth": -50
         }
       },
       {
         "choice_name": "I can afford a decent company",
         "effects": {
-          "troops": 500,
-          "wealth": -100
+          "addTroops": 500,
+          "addWealth": -100
         }
       },
       {
         "choice_name": "Give me the best!",
         "effects": {
-          "troops": 1000,
-          "wealth": -200
+          "addTroops": 1000,
+          "addWealth": -200
         }
       }
     ]
@@ -180,7 +180,7 @@
       {
         "choice_name": "...the end times are here!",
         "effects": {
-          "unrest": 25
+          "addUnrest": 25
         }
       }
     ]
@@ -194,25 +194,25 @@
       {
         "choice_name": "Life is good",
         "effects": {
-          "unrest": -25
+          "addUnrest": -25
         }
       },
       {
         "choice_name": "Time to raise taxes",
         "effects": {
-          "wealth": 50
+          "addWealth": 50
         }
       },
       {
         "choice_name": "Less deaths means more levies",
         "effects": {
-          "troops": 200
+          "addTroops": 200
         }
       },
       {
         "choice_name": "This'll keep the nobles happy",
         "effects": {
-          "loyalty": 20
+          "addLoyalty": 20
         }
       }
     ]
@@ -228,19 +228,19 @@
       {
         "choice_name": "The doctors must save as many as they can",
         "effects": {
-          "unrest": 25,
-          "wealth": -200,
-          "troops": -1000,
-          "loyalty": -25
+          "addUnrest": 25,
+          "addWealth": -200,
+          "addTroops": -1000,
+          "addLoyalty": -25
         }
       },
       {
         "choice_name": "Shut the gates, we must be safe!",
         "effects": {
-          "unrest": 50,
-          "wealth": -100,
-          "troops": -1000,
-          "loyalty": -10
+          "addUnrest": 50,
+          "addWealth": -100,
+          "addTroops": -1000,
+          "addLoyalty": -10
         }
       }
     ]
@@ -254,21 +254,21 @@
       {
         "choice_name": "Can't live with 'em, can't live without 'em",
         "effects": {
-          "loyalty": -25
+          "addLoyalty": -25
         }
       },
       {
         "choice_name": "They dare question me? Off with their heads!",
         "effects": {
-          "loyalty": -50,
-          "wealth": 200
+          "addLoyalty": -50,
+          "addWealth": 200
         }
       },
       {
         "choice_name": "Perhaps we could come to some arrangement",
         "effects": {
-          "loyalty": 25,
-          "wealth": -100
+          "addLoyalty": 25,
+          "addWealth": -100
         }
       }
     ]
@@ -276,14 +276,14 @@
   "e_014": {
     "event_id": "014",
     "event_name": "Foreign war",
-    "event_text": "The treasury is full, the troops are ready and you're itching to get some action. You know what that means?",
+    "event_text": "The treasury is full, the addTroops are ready and you're itching to get some action. You know what that means?",
     "conditions": {},
     "choices": [
       {
         "choice_name": "Time to fight a war!",
         "effects": {
-          "troops": -500,
-          "wealth": -200,
+          "addTroops": -500,
+          "addWealth": -200,
           "flag": "war"
         }
       }
@@ -298,21 +298,21 @@
       {
         "choice_name": "...for protection",
         "effects": {
-          "unrest": -10
+          "addUnrest": -10
         }
       },
       {
         "choice_name": "...for companionship",
         "effects": {
-          "loyalty": 10
+          "addLoyalty": 10
         }
       },
       {
         "choice_name": "...for advice?",
         "effects": {
-          "unrest": 10,
-          "loyalty": -10,
-          "wealth": 100
+          "addUnrest": 10,
+          "addLoyalty": -10,
+          "addWealth": 100
         }
       }
     ]
@@ -326,21 +326,21 @@
       {
         "choice_name": "Raise the levies",
         "effects": {
-          "troops": 200,
-          "unrest": 10
+          "addTroops": 200,
+          "addUnrest": 10
         }
       },
       {
         "choice_name": "Raise taxes",
         "effects": {
-          "wealth": 100,
-          "unrest": 10
+          "addWealth": 100,
+          "addUnrest": 10
         }
       },
       {
         "choice_name": "Make a decision? Don't I have people for that?",
         "effects": {
-          "loyalty": 20
+          "addLoyalty": 20
         }
       }
     ]
@@ -354,21 +354,21 @@
       {
         "choice_name": "How kind",
         "effects": {
-          "wealth": -100,
-          "loyalty": 10
+          "addWealth": -100,
+          "addLoyalty": 10
         }
       },
       {
         "choice_name": "The peasants can pay",
         "effects": {
-          "unrest": 25,
-          "loyalty": 10
+          "addUnrest": 25,
+          "addLoyalty": 10
         }
       },
       {
         "choice_name": "Me? Pay you? That's cute",
         "effects": {
-          "loyalty": -20
+          "addLoyalty": -20
         }
       }
     ]
