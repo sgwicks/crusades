@@ -18,6 +18,13 @@ const Event = ({ toggleModal, event_text, event_name, choices }) => {
               key={'choice' + i}
               onPress={() => handleChoice(choice.effects)}>
               <Text style={styles.eventChoice}>{choice.choice_name}</Text>
+              {Object.keys(choice.effects).map((effect) => {
+                return (
+                  <Text key={choice + effect} style={styles.eventChoice}>
+                    {effect}: {choice.effects[effect]}
+                  </Text>
+                );
+              })}
             </TouchableOpacity>
           );
         })}
