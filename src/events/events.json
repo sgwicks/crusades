@@ -1,5 +1,4 @@
 {
-  "events_list": ["e_001", "e_002", "e_003", "e_004"],
   "e_001": {
     "event_id": "001",
     "event_name": "Pass Go",

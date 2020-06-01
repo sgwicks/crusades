@@ -22,7 +22,7 @@ const MainScreen = () => {
   const [modal, setModal] = useState(false);
   const [event, setEvent] = useState(events.e_002);
 
-  const { events_list } = events;
+  const events_list = Object.keys(events);
 
   const handleTurn = () => {
     // Checks all event conditions against current resources
