@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     color: '#e5dada',
     height: '30vh',
     width: '100vh',
+    maxWidth: '100%',
     backgroundColor: 'rgba(1, 11, 28, 0.8)',
     padding: 10,
     borderColor: 'rgba(229, 184, 110, 1)',
@@ -77,11 +78,11 @@ const styles = StyleSheet.create({
   },
   eventChoiceText: { color: '#e5dada' },
   eventChoiceWrapper: {
-    flex: 1,
+    flex: 2,
     width: '90vh',
-    // alignItems: 'flex-end',
+    maxWidth: '100%',
     justifyContent: 'space-around',
-    flexFlow: 'row wrap',
+    flexFlow: 'row',
     marginHorizontal: '5%',
     paddingTop: '10px',
     borderTopLeftRadius: '30px',
@@ -107,7 +108,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 5,
     paddingHorizontal: 10,
-    // textAlign: 'justify',
     justifyContent: 'center',
     alignItems: 'center'
   }
