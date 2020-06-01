@@ -22,12 +22,14 @@
     "choices": [
       {
         "choice_name": "Give me money!",
+        "choice_text": "You demand money, and so it shall be done",
         "effects": {
           "addWealth": 200
         }
       },
       {
         "choice_name": "I want soliders!",
+        "choice_text": "You demand soldiers, and so it shall be done",
         "effects": {
           "addTroops": 1000
         }
