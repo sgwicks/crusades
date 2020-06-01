@@ -16,11 +16,12 @@ const Event = ({ toggleModal, event_text, event_name, choices }) => {
           return (
             <TouchableOpacity
               key={'choice' + i}
-              onPress={() => handleChoice(choice.effects)}>
-              <Text style={styles.eventChoice}>{choice.choice_name}</Text>
+              onPress={() => handleChoice(choice.effects)}
+              style={styles.eventChoiceButton}>
+              <Text style={styles.eventChoiceText}>{choice.choice_name}</Text>
               {Object.keys(choice.effects).map((effect) => {
                 return (
-                  <Text key={choice + effect} style={styles.eventChoice}>
+                  <Text key={choice + effect} style={styles.eventChoiceText}>
                     {effect}: {choice.effects[effect]}
                   </Text>
                 );
@@ -74,15 +75,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'stretch'
   },
-  eventChoice: { color: '#e5dada' },
+  eventChoiceText: { color: '#e5dada' },
   eventChoiceWrapper: {
     flex: 1,
     width: '90vh',
-    alignItems: 'center',
+    // alignItems: 'flex-end',
     justifyContent: 'space-around',
     flexFlow: 'row wrap',
     marginHorizontal: '5%',
-    paddingBottom: '10px',
     paddingTop: '10px',
     borderTopLeftRadius: '30px',
     borderTopRightRadius: '30px',
@@ -93,6 +93,23 @@ const styles = StyleSheet.create({
     borderLeftStyle: 'ridge',
     borderRightStyle: 'groove',
     backgroundColor: 'rgba(1, 11, 28, 1)'
+  },
+  eventChoiceButton: {
+    borderTopLeftRadius: '30px',
+    borderTopRightRadius: '30px',
+    borderColor: 'rgba(229, 184, 110, 1)',
+    borderWidth: 5,
+    borderBottomWidth: 0,
+    borderTopStyle: 'ridge',
+    borderLeftStyle: 'ridge',
+    borderRightStyle: 'groove',
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    flex: 1,
+    marginHorizontal: 5,
+    paddingHorizontal: 10,
+    // textAlign: 'justify',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
 
