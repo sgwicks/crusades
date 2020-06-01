@@ -61,331 +61,317 @@
       }
     ]
   },
-  {
-    "e_005": {
-        "event_id": "005",
-        "event_name": "Pay off the nobles",
-        "event_text": "Court today is an oddly quiet affair. Too quiet. Most of the talking seems to be kept to a low murmur, barely heard over the restless shuffling of feet and nervous coughing. Eventualluy your spymaster appears by your side and whispers closely in your ear \"Sire, I think perhaps your grace has forgotten the nobility's due rewards\"",
-        "conditions": {
-            "loyalty": -50
-        },
-        "choices": [
-            {
-                "choice_name": "Ah, yes. Thank you for reminding me",
-                "effects": {
-                    "wealth": -300,
-                    "loyalty": 25
-                }
-            },
-            {
-                "choice_name": "Rewards? What for?",
-                "effects": {
-                    "loyalty": -25
-                }
-            }
-        ]
+  "e_005": {
+    "event_id": "005",
+    "event_name": "Pay off the nobles",
+    "event_text": "Court today is an oddly quiet affair. Too quiet. Most of the talking seems to be kept to a low murmur, barely heard over the restless shuffling of feet and nervous coughing. Eventualluy your spymaster appears by your side and whispers closely in your ear \"Sire, I think perhaps your grace has forgotten the nobility's due rewards\"",
+    "conditions": {
+      "loyalty": -50
     },
-    "e_006": {
-        "event_id": "006",
-        "event_name": "A gift from the nobles",
-        "event_text": "Any king would be proud of the job that you've been doing, and so would any noble. In fact, it seems a few of them got together and chipped in to show their appreciation.",
-        "conditions": {
-            "loyalty": 85
-        },
-        "choices": [
-            {
-                "choice_name": "Good work!",
-                "effects": {
-                    "wealth": 100
-                }
-            }
-        ]
+    "choices": [
+      {
+        "choice_name": "Ah, yes. Thank you for reminding me",
+        "effects": {
+          "wealth": -300,
+          "loyalty": 25
+        }
+      },
+      {
+        "choice_name": "Rewards? What for?",
+        "effects": {
+          "loyalty": -25
+        }
+      }
+    ]
+  },
+  "e_006": {
+    "event_id": "006",
+    "event_name": "A gift from the nobles",
+    "event_text": "Any king would be proud of the job that you've been doing, and so would any noble. In fact, it seems a few of them got together and chipped in to show their appreciation.",
+    "conditions": {
+      "loyalty": 85
     },
-    "e_007": {
-        "event_id": "007",
-        "event_name": "The spy who loved me",
-        "event_text": "Late one night as you return to your quarters, you're shocked to find your spymaster waiting for you. You brace yourself for the bad news, but you're totally unprepared for what comes next. \"Sire, I...\"",
-        "conditions": {},
-        "choices": [
-            {
-                "choice_name": "Me too, but we must keep it a secret",
-                "effects": {
-                    "flag": "secret_lover",
-                    "loyalty": 20
-                }
-            },
-            {
-                "choice_name": "Finally, we can tell the world! Let's get married tomorrow!",
-                "effects": {
-                    "loyalty": -50,
-                    "unrest": -50,
-                    "wealth": -50
-                }
-            },
-            {
-                "choice_name": "What? I never!",
-                "effects": {
-                    "loyalty": -10
-                }
-            }
-        ]
+    "choices": [
+      {
+        "choice_name": "Good work!",
+        "effects": {
+          "wealth": 100
+        }
+      }
+    ]
+  },
+  "e_007": {
+    "event_id": "007",
+    "event_name": "The spy who loved me",
+    "event_text": "Late one night as you return to your quarters, you're shocked to find your spymaster waiting for you. You brace yourself for the bad news, but you're totally unprepared for what comes next. \"Sire, I...\"",
+    "conditions": {},
+    "choices": [
+      {
+        "choice_name": "Me too, but we must keep it a secret",
+        "effects": {
+          "flag": "secret_lover",
+          "loyalty": 20
+        }
+      },
+      {
+        "choice_name": "Finally, we can tell the world! Let's get married tomorrow!",
+        "effects": {
+          "loyalty": -50,
+          "unrest": -50,
+          "wealth": -50
+        }
+      },
+      {
+        "choice_name": "What? I never!",
+        "effects": {
+          "loyalty": -10
+        }
+      }
+    ]
+  },
+  "e_008": {
+    "event_id": "008",
+    "event_name": "True Knights",
+    "event_text": "Since you put out the call to arms, knights have been flocking from far and wide to join your armies for the venture forth.",
+    "conditions": {},
+    "choices": [
+      {
+        "choice_name": "Excellent!",
+        "effects": {
+          "troops": 500
+        }
+      }
+    ]
+  },
+  "e_009": {
+    "event_id": "009",
+    "event_name": "Mercenaries",
+    "event_text": "You can't just rely on peasant levies and warrior nobles to supply your troops. Luckily, there are plenty of people out there who could be convinced to fight for you... for a price",
+    "conditions": {},
+    "choices": [
+      {
+        "choice_name": "I can pay a small amount",
+        "effects": {
+          "troops": 200,
+          "wealth": -50
+        }
+      },
+      {
+        "choice_name": "I can afford a decent company",
+        "effects": {
+          "troops": 500,
+          "wealth": -100
+        }
+      },
+      {
+        "choice_name": "Give me the best!",
+        "effects": {
+          "troops": 1000,
+          "wealth": -200
+        }
+      }
+    ]
+  },
+  "e_010": {
+    "event_id": "010",
+    "event_name": "Comet sighted",
+    "event_text": "Last night a bright comet was seen blazing a trail across the sky. You know what that means...",
+    "conditions": {},
+    "choices": [
+      {
+        "choice_name": "...the end times are here!",
+        "effects": {
+          "unrest": 25
+        }
+      }
+    ]
+  },
+  "e_011": {
+    "event_id": "011",
+    "event_name": "Peace in the kingdom",
+    "event_text": "No comets, no plagues, no invasions. Business is booming and people are happy.",
+    "conditions": {},
+    "choices": [
+      {
+        "choice_name": "Life is good",
+        "effects": {
+          "unrest": -25
+        }
+      },
+      {
+        "choice_name": "Time to raise taxes",
+        "effects": {
+          "wealth": 50
+        }
+      },
+      {
+        "choice_name": "Less deaths means more levies",
+        "effects": {
+          "troops": 200
+        }
+      },
+      {
+        "choice_name": "This'll keep the nobles happy",
+        "effects": {
+          "loyalty": 20
+        }
+      }
+    ]
+  },
+  "e_012": {
+    "event_id": "012",
+    "event_name": "Death stalks the land",
+    "event_text": "A terrible plague has swept in from faraway lands. Merchant ships dock at port full of sailors already infected, or full of corpses. Caravans are replaced by trains of refugees. Behind them, death flies on the wind, scythe in hand.",
+    "conditions": {
+      "unrest": -20
     },
-    "e_008": {
-        "event_id": "008",
-        "event_name": "True Knights",
-        "event_text": "Since you put out the call to arms, knights have been flocking from far and wide to join your armies for the venture forth.",
-        "conditions": {},
-        "choices": [
-            {
-                "choice_name": "Excellent!",
-                "effects": {
-                    "troops": 500
-                }
-            }
-        ]
-    },
-    "e_009": {
-        "event_id": "009",
-        "event_name": "Mercenaries",
-        "event_text": "You can't just rely on peasant levies and warrior nobles to supply your troops. Luckily, there are plenty of people out there who could be convinced to fight for you... for a price",
-        "conditions": {},
-        "choices": [
-            {
-                "choice_name": "I can pay a small amount",
-                "effects": {
-                    "troops": 200,
-                    "wealth": -50
-                }
-            },
-            {
-                "choice_name": "I can afford a decent company",
-                "effects": {
-                    "troops": 500,
-                    "wealth": -100
-                }
-            },
-            {
-                "choice_name": "Give me the best!",
-                "effects": {
-                    "troops": 1000,
-                    "wealth": -200
-                }
-            }
-        ]
-    },
-    "e_010": {
-        "event_id": "010",
-        "event_name": "Comet sighted",
-        "event_text": "Last night a bright comet was seen blazing a trail across the sky. You know what that means...",
-        "conditions": {},
-        "choices": [
-            {
-                "choice_name": "...the end times are here!",
-                "effects": {
-                    "unrest": 25
-                }
-            }
-        ]
-    },
-    "e_011": {
-        "event_id": "011",
-        "event_name": "Peace in the kingdom",
-        "event_text": "No comets, no plagues, no invasions. Business is booming and people are happy.",
-        "conditions": {},
-        "choices": [
-            {
-                "choice_name": "Life is good",
-                "effects": {
-                    "unrest": -25
-                }
-            },
-            {
-                "choice_name": "Time to raise taxes",
-                "effects": {
-                    "wealth": 50
-                }
-            },
-            {
-                "choice_name": "Less deaths means more levies",
-                "effects": {
-                    "troops": 200
-                }
-            },
-            {
-                "choice_name": "This'll keep the nobles happy",
-                "effects": {
-                    "loyalty": 20
-                }
-            }
-        ]
-    },
-    "e_012": {
-        "event_id": "012",
-        "event_name": "Death stalks the land",
-        "event_text": "A terrible plague has swept in from faraway lands. Merchant ships dock at port full of sailors already infected, or full of corpses. Caravans are replaced by trains of refugees. Behind them, death flies on the wind, scythe in hand.",
-        "conditions": {
-            "unrest": -20
-        },
-        "choices": [
-            {
-                "choice_name": "The doctors must save as many as they can",
-                "effects": {
-                    "unrest": 25,
-                    "wealth": -200,
-                    "troops": -1000,
-                    "loyalty": -25
-                }
-            },
-            {
-                "choice_name": "Shut the gates, we must be safe!",
-                "effects": {
-                    "unrest": 50,
-                    "wealth": -100,
-                    "troops": -1000,
-                    "loyalty": -10
-                }
-            }
-        ]
-    },
-    "e_013": {
-        "event_id": "013",
-        "event_name": "Troublesome siblings",
-        "event_text": "When you were handed the crown, everyone agreed that you would be the supreme power in the land, and enjoy all the benefits that come with it. At least that's how you remember it. But it seems some of your siblings didn't get the memo.",
-        "conditions": {},
-        "choices": [
-            {
-                "choice_name": "Can't live with 'em, can't live without 'em",
-                "effects": {
-                    "loyalty": -25
-                }
-            },
-            {
-                "choice_name": "They dare question me? Off with their heads!",
-                "effects": {
-                    "loyalty": -50,
-                    "wealth": 200
-                }
-            },
-            {
-                "choice_name": "Perhaps we could come to some arrangement",
-                "effects": {
-                    "loyalty": 25,
-                    "wealth": -100
-                }
-            }
-        ]
-    },
-    "e_014": {
-        "event_id": "014",
-        "event_name": "Foreign war",
-        "event_text": "The treasury is full, the troops are ready and you're itching to get some action. You know what that means?",
-        "conditions": {},
-        "choices": [
-            {
-                "choice_name": "Time to fight a war!",
-                "effects": {
-                    "troops": -500,
-                    "wealth": -200,
-                    "flag": "war"
-                }
-            }
-        ]
-    },
-    "e_015": {
-        "event_id": "015",
-        "event_name": "Faithful hound",
-        "event_text": "A monarch is only as good as the people surrounding them, but even more importantly, the pets, too. Your faithful hound is always there by your side when you need them...",
-        "conditions": {},
-        "choices": [
-            {
-                "choice_name": "...for protection",
-                "effects": {
-                    "unrest": -10
-                }
-            },
-            {
-                "choice_name": "...for companionship",
-                "effects": {
-                    "loyalty": 10
-                }
-            },
-            {
-                "choice_name": "...for advice?",
-                "effects": {
-                    "unrest": 10,
-                    "loyalty": -10,
-                    "wealth": 100
-                }
-            }
-        ]
-    },
-    "e_016": {
-        "event_id": "016",
-        "event_name": "The council meets",
-        "event_text": "Your council has met and discussed all the affairs of the realm. After everyone's finished speaking, it's time to make a decision on the best course of action for the future",
-        "conditions": {},
-        "choices": [
-            {
-                "choice_name": "Raise the levies",
-                "effects": {
-                    "troops": 200,
-                    "unrest": 10
-                }
-            },
-            {
-                "choice_name": "Raise taxes",
-                "effects": {
-                    "wealth": 100,
-                    "unrest": 10
-                }
-            },
-            {
-                "choice_name": "Make a decision? Don't I have people for that?",
-                "effects": {
-                    "loyalty": 20
-                }
-            }
-        ]
-    },
-    "e_017": {
-        "event_id": "017",
-        "event_name": "A tithe",
-        "event_text": "The archbishop is here to kindly remind you that it's time to pay the church tithe",
-        "conditions": {},
-        "choices": [
-            {
-                "choice_name": "How kind",
-                "effects": {
-                    "wealth": -100,
-                    "loyalty": 10
-                }
-            },
-            {
-                "choice_name": "The peasants can pay",
-                "effects": {
-                    "unrest": 25,
-                    "loyalty": 10
-                }
-            },
-            {
-                "choice_name": "Me? Pay you? That's cute",
-                "effects": {
-                    "loyalty": -20
-                }
-            }
-        ]
-    },
-    "e_00": {
-        "event_id": "00",
-        "event_name": "",
-        "event_text": "",
-        "conditions": {},
-        "choices": [
-            {
-                "choice_name": "",
-                "effects": {}
-            }
-        ]
-    },
-}
+    "choices": [
+      {
+        "choice_name": "The doctors must save as many as they can",
+        "effects": {
+          "unrest": 25,
+          "wealth": -200,
+          "troops": -1000,
+          "loyalty": -25
+        }
+      },
+      {
+        "choice_name": "Shut the gates, we must be safe!",
+        "effects": {
+          "unrest": 50,
+          "wealth": -100,
+          "troops": -1000,
+          "loyalty": -10
+        }
+      }
+    ]
+  },
+  "e_013": {
+    "event_id": "013",
+    "event_name": "Troublesome siblings",
+    "event_text": "When you were handed the crown, everyone agreed that you would be the supreme power in the land, and enjoy all the benefits that come with it. At least that's how you remember it. But it seems some of your siblings didn't get the memo.",
+    "conditions": {},
+    "choices": [
+      {
+        "choice_name": "Can't live with 'em, can't live without 'em",
+        "effects": {
+          "loyalty": -25
+        }
+      },
+      {
+        "choice_name": "They dare question me? Off with their heads!",
+        "effects": {
+          "loyalty": -50,
+          "wealth": 200
+        }
+      },
+      {
+        "choice_name": "Perhaps we could come to some arrangement",
+        "effects": {
+          "loyalty": 25,
+          "wealth": -100
+        }
+      }
+    ]
+  },
+  "e_014": {
+    "event_id": "014",
+    "event_name": "Foreign war",
+    "event_text": "The treasury is full, the troops are ready and you're itching to get some action. You know what that means?",
+    "conditions": {},
+    "choices": [
+      {
+        "choice_name": "Time to fight a war!",
+        "effects": {
+          "troops": -500,
+          "wealth": -200,
+          "flag": "war"
+        }
+      }
+    ]
+  },
+  "e_015": {
+    "event_id": "015",
+    "event_name": "Faithful hound",
+    "event_text": "A monarch is only as good as the people surrounding them, but even more importantly, the pets, too. Your faithful hound is always there by your side when you need them...",
+    "conditions": {},
+    "choices": [
+      {
+        "choice_name": "...for protection",
+        "effects": {
+          "unrest": -10
+        }
+      },
+      {
+        "choice_name": "...for companionship",
+        "effects": {
+          "loyalty": 10
+        }
+      },
+      {
+        "choice_name": "...for advice?",
+        "effects": {
+          "unrest": 10,
+          "loyalty": -10,
+          "wealth": 100
+        }
+      }
+    ]
+  },
+  "e_016": {
+    "event_id": "016",
+    "event_name": "The council meets",
+    "event_text": "Your council has met and discussed all the affairs of the realm. After everyone's finished speaking, it's time to make a decision on the best course of action for the future",
+    "conditions": {},
+    "choices": [
+      {
+        "choice_name": "Raise the levies",
+        "effects": {
+          "troops": 200,
+          "unrest": 10
+        }
+      },
+      {
+        "choice_name": "Raise taxes",
+        "effects": {
+          "wealth": 100,
+          "unrest": 10
+        }
+      },
+      {
+        "choice_name": "Make a decision? Don't I have people for that?",
+        "effects": {
+          "loyalty": 20
+        }
+      }
+    ]
+  },
+  "e_017": {
+    "event_id": "017",
+    "event_name": "A tithe",
+    "event_text": "The archbishop is here to kindly remind you that it's time to pay the church tithe",
+    "conditions": {},
+    "choices": [
+      {
+        "choice_name": "How kind",
+        "effects": {
+          "wealth": -100,
+          "loyalty": 10
+        }
+      },
+      {
+        "choice_name": "The peasants can pay",
+        "effects": {
+          "unrest": 25,
+          "loyalty": 10
+        }
+      },
+      {
+        "choice_name": "Me? Pay you? That's cute",
+        "effects": {
+          "loyalty": -20
+        }
+      }
+    ]
+  }
 }
