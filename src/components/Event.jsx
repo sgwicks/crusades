@@ -76,11 +76,23 @@ const styles = StyleSheet.create({
   },
   eventChoice: { color: '#e5dada' },
   eventChoiceWrapper: {
-    flex: 2,
-    width: '100vh',
+    flex: 1,
+    width: '90vh',
     alignItems: 'center',
     justifyContent: 'space-around',
-    flexFlow: 'row wrap'
+    flexFlow: 'row wrap',
+    marginHorizontal: '5%',
+    paddingBottom: '10px',
+    paddingTop: '10px',
+    borderTopLeftRadius: '30px',
+    borderTopRightRadius: '30px',
+    borderColor: 'rgba(229, 184, 110, 1)',
+    borderWidth: 5,
+    borderBottomWidth: 0,
+    borderTopStyle: 'ridge',
+    borderLeftStyle: 'ridge',
+    borderRightStyle: 'groove',
+    backgroundColor: 'rgba(1, 11, 28, 1)'
   }
 });
 
