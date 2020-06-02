@@ -14,7 +14,7 @@ const Event = ({ toggleModal, event_text, choices }) => {
 
   const handleChoice = (choice) => {
     const { choice_text } = choice;
-    const choiceText = choice_text ? choice_text : event_text;
+    const choiceText = choice_text ? choice_text : `You chose: ${choice.choice_name}`;
     setText(choiceText);
     setButtons([{ ...choice, choice_name: 'Ok' }]);
     toggleHasChosen(true);
