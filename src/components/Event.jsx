@@ -1,22 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const Event = ({ toggleModal, event_text, event_name, choices }) => {
-  const handleChoice = (effects) => {
-    toggleModal(effects);
+const Event = ({ toggleModal, event_text, choices }) => {
+  const [text, setText] = useState('');
+  const [buttons, setButtons] = useState([]);
+  const [hasChosen, toggleHasChosen] = useState(false);
+
+  useEffect(() => {
+    setText(event_text);
+    setButtons(choices);
+    if (choices[0].choice_name === 'Back to Castle') toggleHasChosen(true);
+  }, [event_text, choices]);
+
+  const handleChoice = (choice) => {
+    const { choice_text } = choice;
+    const choiceText = choice_text ? choice_text : `You chose: ${choice.choice_name}`;
+    setText(choiceText);
+    setButtons([{ ...choice, choice_name: 'Ok' }]);
+    toggleHasChosen(true);
+  };
+
+  const exitEvent = (choice, text) => {
+    toggleModal(choice, text);
   };
 
   return (
     <View style={styles.eventModal}>
       <View style={styles.eventTextWrapper}>
-        <Text style={styles.eventText}>{event_text}</Text>
+        <Text style={styles.eventText}>{text}</Text>
       </View>
       <View style={styles.eventChoiceWrapper}>
-        {choices.map((choice, i) => {
+        {buttons.map((choice, i) => {
           return (
             <TouchableOpacity
               key={'choice' + i}
-              onPress={() => handleChoice(choice.effects)}
+              onPress={() =>
+                hasChosen ? exitEvent(choice, text) : handleChoice(choice)
+              }
               style={styles.eventChoiceButton}>
               <Text style={styles.eventChoiceText}>{choice.choice_name}</Text>
               {Object.keys(choice.effects).map((effect) => {
