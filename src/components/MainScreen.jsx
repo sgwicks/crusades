@@ -41,16 +41,23 @@ const MainScreen = () => {
     setEvent(events[nextEvent]);
   };
 
-  const toggleModal = (effects) => {
-    const { addWealth, addTroops, addUnrest, addLoyalty } = effects;
+  const toggleModal = (choice, text) => {
     if (modal) {
+      const { addWealth, addTroops, addUnrest, addLoyalty } = choice.effects;
       if (addWealth) setWealth(wealth + addWealth);
       if (addTroops) setTroops(troops + addTroops);
       if (addUnrest) setUnrest(unrest + addUnrest);
       if (addLoyalty) setLoyalty(loyalty + addLoyalty);
       setEvent({
         ...event,
-        choices: [{ choice_name: 'Back to Castle', effects: {} }]
+        event_text: text,
+        choices: [
+          {
+            choice_name: 'Back to Castle',
+            effects: {},
+            choice_text: text
+          }
+        ]
       });
     }
     setModal(!modal);

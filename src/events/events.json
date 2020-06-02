@@ -22,12 +22,14 @@
     "choices": [
       {
         "choice_name": "Give me money!",
+        "choice_text": "You demand money, and so it shall be done",
         "effects": {
           "addWealth": 200
         }
       },
       {
         "choice_name": "I want soliders!",
+        "choice_text": "You demand soldiers, and so it shall be done",
         "effects": {
           "addTroops": 1000
         }
@@ -276,7 +278,7 @@
   "e_014": {
     "event_id": "014",
     "event_name": "Foreign war",
-    "event_text": "The treasury is full, the addTroops are ready and you're itching to get some action. You know what that means?",
+    "event_text": "The treasury is full, the troops are ready and you're itching to get some action. You know what that means?",
     "conditions": {},
     "choices": [
       {

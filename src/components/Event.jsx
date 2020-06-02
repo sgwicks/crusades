@@ -1,23 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const Event = ({ toggleModal, event_text, event_name, choices }) => {
-  const handleChoice = (effects) => {
-    toggleModal(effects);
+const Event = ({ toggleModal, event_text, choices }) => {
+  const [text, setText] = useState('');
+  const [buttons, setButtons] = useState([]);
+  const [hasChosen, toggleHasChosen] = useState(false);
+
+  useEffect(() => {
+    setText(event_text);
+    setButtons(choices);
+    if (choices[0].choice_name === 'Back to Castle') toggleHasChosen(true);
+  }, [event_text, choices]);
+
+  const handleChoice = (choice) => {
+    const { choice_text } = choice;
+    const choiceText = choice_text ? choice_text : `You chose: ${choice.choice_name}`;
+    setText(choiceText);
+    setButtons([{ ...choice, choice_name: 'Ok' }]);
+    toggleHasChosen(true);
+  };
+
+  const exitEvent = (choice, text) => {
+    toggleModal(choice, text);
   };
 
   return (
     <View style={styles.eventModal}>
       <View style={styles.eventTextWrapper}>
-        <Text style={styles.eventText}>{event_text}</Text>
+        <Text style={styles.eventText}>{text}</Text>
       </View>
       <View style={styles.eventChoiceWrapper}>
-        {choices.map((choice, i) => {
+        {buttons.map((choice, i) => {
           return (
             <TouchableOpacity
               key={'choice' + i}
-              onPress={() => handleChoice(choice.effects)}>
-              <Text style={styles.eventChoice}>{choice.choice_name}</Text>
+              onPress={() =>
+                hasChosen ? exitEvent(choice, text) : handleChoice(choice)
+              }
+              style={styles.eventChoiceButton}>
+              <Text style={styles.eventChoiceText}>{choice.choice_name}</Text>
+              {Object.keys(choice.effects).map((effect) => {
+                return (
+                  <Text key={choice + effect} style={styles.eventChoiceText}>
+                    {effect}: {choice.effects[effect]}
+                  </Text>
+                );
+              })}
             </TouchableOpacity>
           );
         })}
@@ -52,6 +80,7 @@ const styles = StyleSheet.create({
     color: '#e5dada',
     height: '30vh',
     width: '100vh',
+    maxWidth: '100%',
     backgroundColor: 'rgba(1, 11, 28, 0.8)',
     padding: 10,
     borderColor: 'rgba(229, 184, 110, 1)',
@@ -67,13 +96,40 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'stretch'
   },
-  eventChoice: { color: '#e5dada' },
+  eventChoiceText: { color: '#e5dada' },
   eventChoiceWrapper: {
     flex: 2,
-    width: '100vh',
-    alignItems: 'center',
+    width: '90vh',
+    maxWidth: '100%',
     justifyContent: 'space-around',
-    flexFlow: 'row wrap'
+    flexFlow: 'row',
+    marginHorizontal: '5%',
+    paddingTop: '10px',
+    borderTopLeftRadius: '30px',
+    borderTopRightRadius: '30px',
+    borderColor: 'rgba(229, 184, 110, 1)',
+    borderWidth: 5,
+    borderBottomWidth: 0,
+    borderTopStyle: 'ridge',
+    borderLeftStyle: 'ridge',
+    borderRightStyle: 'groove',
+    backgroundColor: 'rgba(1, 11, 28, 1)'
+  },
+  eventChoiceButton: {
+    borderTopLeftRadius: '30px',
+    borderTopRightRadius: '30px',
+    borderColor: 'rgba(229, 184, 110, 1)',
+    borderWidth: 5,
+    borderBottomWidth: 0,
+    borderTopStyle: 'ridge',
+    borderLeftStyle: 'ridge',
+    borderRightStyle: 'groove',
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    flex: 1,
+    marginHorizontal: 5,
+    paddingHorizontal: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
 
